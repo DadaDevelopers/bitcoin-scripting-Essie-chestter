@@ -1,0 +1,26 @@
+=== HTLC Script ===
+
+OP_IF
+    OP_HASH256 c997829c67fac1d8a3d298a7385b54520872ceef4259b12442da4f2ead700943 OP_EQUALVERIFY
+    <Alice_PublicKey> OP_CHECKSIG
+OP_ELSE
+    1260 OP_CHECKLOCKTIMEVERIFY OP_DROP
+    <Bob_PublicKey> OP_CHECKSIG
+OP_ENDIF
+
+=== Claim Transaction Script ===
+
+<signature_Alice>
+atomic_swap_secret
+OP_TRUE
+
+=== Refund Transaction Script ===
+
+<signature_Bob>
+OP_FALSE
+
+=== Test Results ===
+Secret Hash: c997829c67fac1d8a3d298a7385b54520872ceef4259b12442da4f2ead700943
+Claim Result: Alice successfully claims the funds.
+Refund Before Timeout: Refund not allowed yet.
+Refund After Timeout: Bob refunds the funds after timeout.
