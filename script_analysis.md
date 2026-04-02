@@ -108,10 +108,10 @@ Data Flow:
 signature public_key
       │
       ▼
-OP_DUP
+   OP_DUP
       │
       ▼
-OP_HASH160
+  OP_HASH160
       │
       ▼
 Compare with PubKeyHash
@@ -120,7 +120,7 @@ Compare with PubKeyHash
 OP_EQUALVERIFY
       │
       ▼
-OP_CHECKSIG
+  OP_CHECKSIG
       │
       ▼
 Transaction Valid
